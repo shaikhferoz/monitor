@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+// package dashboard;
+
+service Dashboard {
+    rpc GetDashboard (DashboardRequest) returns (DashboardResponse);
+}
+
+message Panel {
+    string id = 1;
+    string type = 2;
+    string data_source = 3;
+}
+
+message DashboardRequest {
+    string id = 1;
+}
+
+message DashboardResponse {
+    string id = 1;
+    string name = 2;
+    repeated Panel panels = 4;
+}
